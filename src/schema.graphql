@@ -13,9 +13,11 @@ type User {
 
 type Query {
   feed(filter: String, skip: Int, first: Int): [Link!]!
+  users(filter: String): [User!]!
 }
 
 type Mutation {
   post(url: String!, description: String!): Link!
   signup(email: String!, password: String!, name: String!): AuthPayload
+  login(email: String!, password: String!): AuthPayload
 }
